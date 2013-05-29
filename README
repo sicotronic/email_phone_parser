@@ -1,0 +1,5 @@
+This small program is a command line tool to parse emails and phone numbers from a given url using a set of patterns written as regular expressions.
+It is specially intended to find emails and phone numbers that are obfuscated in order to avoid spam.
+The program is modularized in such a way that is easy to use your own patterns to discover emails and phone numbers, and adding new ones can be done by just 
+adding new lines with regular expressions to our patterns file.
+The program is written in the file 'email_phone_parser.py'. Instructions for the usage are giving when '-h' or '--help' are given in the arguments.
