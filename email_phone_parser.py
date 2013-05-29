@@ -11,6 +11,10 @@ ENCODING = "utf-8"
 DELIMITER = '\\t'
 
 def process_url(url_address, email_patterns, phone_patterns):
+    """
+    Uses the given patterns to find hidden phone numbers and emails
+    in the url provided.
+    """
     emails = []
     phone_numbers = []
     source = urlopen(url_address)
@@ -38,6 +42,9 @@ def process_url(url_address, email_patterns, phone_patterns):
 
 
 def get_patterns(input_file):
+    """
+    Returns a list of the patterns as they are given in the input file.
+    """
     patterns = []
     input_patterns = open(input_file, 'r', ENCODING)
     for line in input_patterns:
@@ -46,13 +53,14 @@ def get_patterns(input_file):
     return patterns
 
 def get_email_patterns(input_file, delim=DELIMITER):
+    """
+    Returns a list of regex to find emails from the input file.
+    """
     patterns = []
     users = []
     ats = []
     domains = []
     dots = []
-#    extra_pattern = '<script>\ ?obfuscate\(.([a-zA-Z0-9\.\-]+).,.([a-zA-Z0-9\.\-]+).\)'
-#    patterns.append(extra_pattern)
 
     input_patterns = open(input_file, 'r', ENCODING)
     for line in input_patterns:
